@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<!--https://openreview.net/forum?id=ohdw3t-8VCY-->
+
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - jQuery Animated Tooltip Menu</title>
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+<header>
+  <!--
+  <nav class="nav">
+    <ul class="tooltip">
+
+      <li class="mainlink"><span><a href="#">About</a></span>
+        <ul>
+          <li><span><a href="#">Locations</a></span>
+            <ul>
+              <li><a href="#">Madison</a></li>
+              <li><a href="#">Winder</a></li>
+
+            </ul>
+          </li>
+          <li><span><a href="#">History</a></span></li>
+          <li><span><a href="#">Hours</a></span></li>
+
+        </ul>
+      </li>
+
+      <li class="mainlink"><span><a href="#">Eat</a></span>
+        <ul>
+          <li><span><a href="#">Breakfast</a></span></li>
+          <li><span><a href="#">Lunch</a></span>
+            <ul>
+              <li><a href="#">Starters</a></li>
+              <li><a href="#">Entrees</a></li>
+            </ul>
+          </li>
+          <li><span><a href="#">Dinner</a></span>
+            <ul>
+              <li>Starters</li>
+              <li>Entrees</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li><span><a href="#">Drink</a></span>
+        <ul>
+          <li><span><a href="#">Wine </a></span>
+            <ul>
+              <li>White </li>
+              <li>Red </li>
+              <li>Sparkling </li>
+            </ul>
+          </li>
+          <li><span><a href="#">Beer</a></span>
+            <ul>
+              <li>On Tap  </li>
+              <li>Bottled  </li>
+              <li>Seasonal Craft  </li>
+            </ul>
+          </li>
+          <li><span><a href="#">Cocktails</a></span>
+            <ul>
+              <li>Vodka  </li>
+              <li>Whiskey  </li>
+              <li>Scotch  </li>
+            </ul>
+          </li>
+         <li><span><a href="#">Dessert Drinks </a></span></li>
+        </ul>
+      </li>
+
+      <li><span><a href="#">Catering</a></span></li>
+
+      <li><span><a href="#">Events</a></span>
+        <ul>
+          <li><span><a href="#">Calendar</a></span></li>
+          <li><span><a href="#">Venue Rental</a></span></li>
+        </ul>
+      </li>
+    </ul>
+</nav>
+-->
+</header>
+  <div class="info">
+<h1>CTRLsum: Towards Generic Controllable Text Summarization</h1>
+  <h3>Junxian He, Wojciech Maciej Kryscinski, Bryan McCann, Nazneen Rajani, Caiming Xiong</h3>
+  <p style="color: black; font-size: 12px">
+    Keywords: controllable text summarization
+    <br/>
+    Abstract: Current summarization systems yield generic summaries that are disconnected from users' preferences and expectations. To address this limitation, we present CTRLsum, a novel framework for controllable summarization. Our approach enables users to control multiple aspects of generated summaries by interacting with the summarization system through textual input in the form of a set of keywords or descriptive prompts. Using a single unified model, CTRLsum is able to achieve a broad scope of summary manipulation at inference time without requiring additional human annotations or pre-defining a set of control aspects during training. We quantitatively demonstrate the effectiveness of our approach on three domains of summarization datasets and five control aspects: 1) entity-centric and 2) length-controllable summarization, 3) contribution summarization on scientific papers, 4) invention purpose summarization on patent filings, and 5) question-guided summarization on news articles in a reading comprehension setting. Moreover, when used in a standard, uncontrolled summarization setting, CTRLsum achieves state-of-the-art results on the CNN/DailyMail dataset.
+    <br/>
+    One-sentence Summary: We present CTRLsum, a generic framework for controllable summarization that is able to achieve a broad scope of summary manipulation
+    <br/>
+    Code Of Ethics: I acknowledge that I and all co-authors of this work have read and commit to adhering to the ICLR Code of Ethics
+</p>
+  <div id="slider-wrapper0" class='panel'>
+    <div id="slider-content0">
+      Generated Summary
+      <p id='slider-hidden0'>
+        This paper proposes a framework for controllable summarization, CTRLsum. It is different from standard summarization models that CTRLsum uses a set of keywords extracted from the source text automatically or descriptive prompts to control the summary. Experiments with three domains of summarization datasets and five control aspects.
+      </p>
+    </div>
+  </div>
+  <br/>
+
+  <div id="slider-wrapper1" class='panel'>
+    <div id="slider-content1">
+      Generated Metareview
+      <p id='slider-hidden1'>
+        The paper's main motivation on controllable summarization is important and interesting, and despite simplicity, the results are generally positive on multiple datasets. However, despite positive results, reviewers raised several critical concerns, some of which remained unresolved after reviewer/author discussion period. Examples include concerns regarding lack of methodological novelty over prior work (R1, R2, R4), unfair/incomplete comparisons with prior work (R2, R4, R5), and not evaluating on a real user controlled setting instead of automatic keywords (R1, R4). Although the authors tried addressing human evaluation in their revision, some reviewers remained unconvinced. Some quotes from reviewer discussions:
+      </p>
+    </div>
+  </div>
+  <br/>
+
+  <div class='panel'>
+    Pros / Cons of Reviews
+    <table>
+    <tr>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+    <tr>
+      <td>Motivation on controllable summarization is important and interesting (<a class="unit" href="#R0P0">AnonReviewer0</a>, AnonReviewer1, AnonReviewer2)</td>
+      <td>Lack of methodological novelty over prior work (AnonReviewer0, AnonReviewer1, AnonReviewer2)</td>
+    </tr>
+    <tr>
+      <td>Results are generally positive on multiple datasets (AnonReviewer0, AnonReviewer1, AnonReviewer2)</td>
+      <td>Unfair/incomplete comparisons with prior work (AnonReviewer0, AnonReviewer1, AnonReviewer2)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Not evaluating on a real user controlled setting instead of automatic keywords (AnonReviewer0, AnonReviewer1, AnonReviewer2)</td>
+    </tr>
+  </table>
+  </div>
+  <br/>
+
+  <div class='panel'>
+    <h2>AnonReviewer0</h2>
+    <strong>Generated summary of review:</strong><br/>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    <hr/>
+    <strong>Original review:</strong><br/>
+    This paper proposes a two-stage summarization system where a document is provided along with (optionally) keywords or a prompt. This supplemental information helps to guide the summarization and possibly make it more user-specific. The keywords and prompt can also be guessed automatically by a BERT-base model, which seems to improve automatic metrics on CNN/daily mail.
+    <br/>
+    Strengths:
+    <br/>
+    Moving beyond the conventional 'document/summary' framework of existing summarization approaches is a strength of this paper. This paper studies a few different ways that the summaries can be controlled: through prompts, entities, or one-sentence summaries of summaries (contribution and purpose summarization). These seem novel at least to this reviewer and could be helpful for future work.
+
+    <ul id='R0P0' class="tooltip">
+      <li><span class="unit positive"><a>When using oracle guidance, performance increases on several different datasets for slightly different forms of summarization (CNN/DM, arxiv, bigpatent).</a></span>
+        <ul>
+          <li>
+            <strong>Categorization:</strong> Fact
+            <br/>
+            <strong>Reference in paper:</strong> Page 8, Section 4.6
+            <br/>
+            <strong>Agreements in other reviews:</strong><br/>
+            <a href="#R1P0">Anonreviewer1: "Improves state-of-the-art..."</a>
+            <br/>
+            <strong>Disagreements in other reviews:</strong><br/>
+            <a href="#R1N0">Anonreviewer1: " It is unclear how much..."</a>
+            <br/>
+            <strong>References in Rebuttal:</strong><br/>
+            Rebuttal2: “Lorem ipsum dolor sit amet...”
+          </li>
+        </ul>
+      </li>
+    </ul>
+    The idea of using a two-stage approach (with a BERT-Base extractor to guess keywords to guide the summary) seems novel to this reviewer, and it seems to enable this approach to perform well even in an unconditional setting.
+    <br/>
+    Weaknesses:
+    <br/>
+    The main weakness to this reviewer is that the evaluation might not be sufficiently convincing to test the key hypothesis: that these keywords/prompts can enable users to get summaries that are closer to their intent (like Figure 1). To this reviewer, this necessitates a human evaluation. Though testing factual correctness in Table 3 seems like a good start to this reviewer, measuring overall summarization quality (both conditional and unconditional on user intent) through a human evaluation seems necessary.
+    (minor) one possible reason why the two-stage approach might perform better on unconditional summarization is because there are more parameters when ensembling BERT-Base and BART. Possibly doing something multitask within a single BART model might be cleaner and could clearly test whether the gains come from more parameters/computation, or the keyword approach.
+    Overall, to this reviewer, this paper seems like it would be strong if it had human evaluations of summarization quality. I would be willing to raise my score if those were provided.
+    <br/>
+    Update: thanks for the additional human evaluation results! These help and the results on excluding unimportant entities seem strong to this reviewer. Perhaps it might be more helpful for the annotators themselves to try to interact with the summarizer in some way, but that's a more minor point.
+    <br/>
+    Anyways, I bumped up my score from 5->7.
+    <br/>
+    Rating: 7: Good paper, accept
+    Confidence: 3: The reviewer is fairly confident that the evaluation is correct
+  </div>
+  <br/>
+
+  <div class='panel'>
+    <h2>AnonReviewer1</h2>
+
+    <strong>Generated summary of review:</strong><br/>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    <hr/>
+    Interesting techniques for some summarization tasks, but unclear contribution over Fan et al.
+    ICLR 2021 Conference Paper2271 AnonReviewer4
+    28 Oct 2020 (modified: 10 Nov 2020)ICLR 2021 Conference Paper2271 Official ReviewReaders:  Everyone
+    Review:
+    <br/>
+    Summary:
+    Builds/extends on Controllable Abstractive Summarization (Fan et al) using keywords and other prompts. There’s two phases, and both phases are independent:
+    <br/>
+    Extract keywords, z, using a BERT classifier/sequence-tagger trained to predict keywords
+    Fine-tune BART (Lewis et al) to learn p(summary | document, z).
+    One can use automatic keywords using (1) and get uncontrolled generation, for which they present SOTA results on some summarization tasks. Two datasets are collected: (a) intro->contributions from arxiv papers; (b) patent->one-sentence summary, which are used to measure performance of prompts specific to those tasks.
+    <br/>
+    Pros:
+    <ul id='R1P0' class="tooltip">
+      <li><span class="unit positive"><a>Improves state-of-the-art results on some summarization benchmarks.</a></span>
+        <ul>
+          <li>
+            <strong>Categorization:</strong> Fact
+            <br/>
+            <strong>Reference in paper:</strong> Page 8, Section 4.6
+            <br/>
+            <strong>Agreements in other reviews:</strong><br/>
+            <a href="#R0P0">Anonreviewer0: "When using oracle guidance..."</a>
+            <br/>
+            <strong>Disagreements in other reviews:</strong><br/>
+            Anonreviewer1: “Lorem ipsum dolor sit amet...”<br/>
+            Anonreviewer3: “Lorem ipsum dolor sit amet...”
+            <br/>
+            <strong>References in Rebuttal:</strong><br/>
+            Rebuttal2: “Lorem ipsum dolor sit amet...”
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    Provides BERTScore results in addition to ROUGE.
+    Results provided across multiple summarization datasets.
+    Interesting new datasets for measuring document+prompt->summary performance
+    Interesting zero-shot/transfer results from summarization to Question-answering.
+    <br/>
+    Cons:
+    Contribution in methods over Fan et al + BART (Lewis et al) is minimal. Results in Fan et al were weak because the underlying model was much weaker than BART, so
+
+    <ul id='R1N0' class="tooltip">
+      <li><span class="unit negative"><a>It is unclear how much results here improved from simply using BART and adding control tokens from Fan et al, which would be a useful baseline to have that is omitted.</a></span>
+        <ul>
+          <li>
+            <strong>Categorization:</strong> Evaluation
+            <br/>
+            <strong>Reference in paper:</strong> Page X, Section X.X
+            <br/>
+            <strong>Agreements in other reviews:</strong>
+            <br/>
+            <strong>Disagreements in other reviews:</strong><br/>
+            <a href="#R0P0">Anonreviewer0: "When using oracle guidance..."</a>
+            <br/>
+            <strong>References in Rebuttal:</strong><br/>
+            Rebuttal2: “Lorem ipsum dolor sit amet...”
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+    Since the focus of the paper is on controlling generation, more results on this would be informative. It is unclear how well control works when not using oracle words or automatically extracted keywords, i.e. user-controlled. An MTurk experiment evaluating how well control works would be useful in assessing this.
+    Comparing BART/PEGASUS to BART+BERT-based model is a little unfair since BERT is another large model in the system, i.e. the total amount of compute and number of parameters is much greater. A more fair comparison would be to compare using a smaller BART or PEGASUS model such that the model sizes are comparable. It is unclear whether the proposed system would do better than BART/PEGASUS scaled to the same amount of total parameters.
+    For the prompt tests, how well does BART/PEGASUS do if the decoder is prompted? This baseline would be useful to have. That is, it’s unclear how the p(y | x, z) improves over using p(y | x) by simply prompting the decoder.
+    <br/>
+    Clarifications/questions:
+    For "CONTRIBUTION AND PURPOSE SUMMARIZATION", what is the fine-tuning process? Are the models fine-tuned on (paper/patent, keywords)->abstract task before testing on intro->contribution generation?
+    How are entities randomly selected in the example decodes in the Appendix?
+    Are any of the prompts used in training or is it zero-shot?
+    What is zero-shot state-of-the-art on the QA tasks? Please add to Table 5. GPT-3 zero-shot results would also be informative.
+    Rating: 5: Marginally below acceptance threshold
+    Confidence: 5: The reviewer is absolutely certain that the evaluation is correct and very familiar with the relevant literature
+  </div>
+
+
+  <p>This isn't groundbreaking or anything, but if I wanted some non-tooltip submenu action I would've had to dig around much more than I felt like doing. </p>
+  <p>The pattern for adding more than 3 levels on the second submenu should be pretty simple; add 35px for every new .push- pseduo class. The typography needs to be made responsive, but all of that will be for another day.</p>
+    <p>Leave me your thoughts and comments!</p>
+    <ul class="tooltip">
+      <li class="mainlink"><span><a href="#">About</a></span>
+        <ul>
+          <li>
+            JSAKDHSJKAHD
+          </li>
+        </ul>
+        <!--</ul>
+        <ul>
+          <li><span><a href="#">Locations</a></span>
+            <ul>
+              <li><a href="#">Madison</a></li>
+              <li><a href="#">Winder</a></li>
+
+            </ul>
+          </li>
+          <li><span><a href="#">History</a></span></li>
+          <li><span><a href="#">Hours</a></span></li>
+        </ul>-->
+      </li>
+    </ul>
+
+    <ul class="tooltip">
+      <li class="mainlink"><span><a href="#">Insert sentence here</a></span>
+        <ul>
+          <li>
+            Insert Tooltip Here
+          </li>
+        </ul>
+      </li>
+    </ul>
+</div>
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
