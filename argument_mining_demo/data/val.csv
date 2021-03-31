@@ -1,0 +1,281 @@
+	sentence_id	text	position
+397	iclr19_304_3_10	 In the current version, you seem to define overfitting on-the-fly while defining your criteria.	 NA
+888	midl19_40_3_6	 The authors also compare the annotation time between points, bounding boxes and full supervision, which really highlight the impact of their method (x10 speedup).	 POS
+1369	neuroai19_54_3_8	" 2) I agree with a concern raised by reviewer 3: It's difficult to see a 1-layer network as a ""mechanistic explanation"" of a 3-layer network."	 NEG
+872	midl19_25_3_2	 The authors could spend a little more effort on explaining the intuition behind conditional versus unconditional labels and the advantages of each.	 NEG
+635	iclr20_2094_1_9	 Notably, several classes of geometric bin packing problems admit polynomial-time approximation algorithms (for extended surveys about this topic, see e.g. Arindam Khans Ph.D.	 NA
+146	graph20_39_3_7	 The description of each patient drags on a little long, and much of it does not become useful after in the later sections, since particular medical history is not referenced in later sections.	 NEG
+1257	neuroai19_29_1_0	 While the question of how neural networks may act over concept space is important, I dont think the approach used by the authors correctly adress this question.	 POS
+60	graph20_29_3_28	 To the best of my understanding, these are not percentages of prediction error (e.g. going from 50 to 55 is a 10% increase), which would be more ok.	 NA
+113	graph20_36_1_27	 The discussion mentions participants who felt the drawing were similar while the metric showed they were not.	 NEG
+128	graph20_39_2_10	 How representative is it, whats the bigger picture, can it be generalised to other not known scenarios?	 NEG
+358	iclr19_242_2_36	 However, I am not convinced by the experiments that the good performance is from the proposed method, not from the N times more augmented samples.	 NEG
+1342	neuroai19_37_3_21	 Our challenge is to understand how this occurs.	 NA
+1304	neuroai19_34_2_6	 Methods described clearly and in good detail.	 POS
+127	graph20_39_2_9	 Thirdly, from the discussion of the findings, quotes appear unpacked.	 NEG
+750	iclr20_727_1_5	" Though the final proof is in the pudding, and the addition of the VAE to model the base distribution yields promising results, the only justification for it in the paper is to create a more ""expressive"" model."	 NEG
+1018	midl19_56_3_7	" I would recommend weakening or at least toning down certain ""marketing"" claims like ""3 times finer than the highest resolution ever investigated in the domain of voxel-based shape generation"", or ""the finest resolution ever achieved among voxel-based models in computer graphics""."	 NEG
+399	iclr19_304_3_12	 Detailed: Page 3, last paragraph: Why did you not use bias terms in your model?	 NA
+54	graph20_29_3_22	" The level of detail argued here seems quite artificial, e.g. ""If designers want a hyperlink to have a 77% success rate""."	 NEG
+262	iclr19_1091_1_0	 This paper discusses State Representation Learning for RL from camera images.	 NA
+15	graph20_25_2_15	 Thus, the paper should better position the proposed design/prototype within this design space.	 NEG
+1134	midl20_56_4_16	 The method is novel with extensive experiments.	 POS
+1241	neuroai19_23_1_10	 The question of how the visual world is represented in the brain is an essential question in neuroscience as well as for building successful machine learning techniques for artificial vision.	 NA
+758	iclr20_727_1_13	" after setting up the expectation that the marks will not be modelled initially, up till footnote 2 on page 7."""	 NEG
+1240	neuroai19_23_1_9	 Results were presented quite clearly, although datasets and methods rely entirely on previously published work, such that digging into previous work on PredNet and the Algonauts project was necessary for a full understanding.	 NEG
+617	iclr20_2046_2_22	 In fact, it is performed under the exact assumption where the theoretical analysis is done for the A*MCTS.	 NA
+671	iclr20_305_3_3	" The leader sends messages to followers, an ""event"" is a pair (timestep, message of leader to a follower)."	 NA
+204	graph20_56_1_11	 A similar problem occurred with a critical aspect of the brushing technique: direction.	 NEG
+751	iclr20_727_1_6	 There are multiple ways of increasing the expressiveness of the underlying distribution: moving from RNNs to GRU or LSTMs, increasing the hierarchical depth of the recurrence by stacking the layers, increasing the size of the hidden state, more layers before the output layer, etc. A convincing justification behind using a VAE for the task seems to be missing.	 NEG
+662	iclr20_2157_3_9	 As I understand it, real improvements in predicting clinical variables has not been shown to be reproducible so this would be a significant claim of this paper.	 NEG
+791	iclr20_880_2_11	 Since the authors are using inner matrices with a number of dimensions higher than the number of dimensions of the original matrix, there is no approximation and, then, no selection of features or feature combinations.	 NA
+633	iclr20_2094_1_7	 Moreover, BPPs have been extensively studied in theoretical computer science, with various approximation results.	 NA
+189	graph20_53_2_16	 The actual discussion of the results unfortunately is very limited (especially because large parts of it consist of qualitative reporting), and are mostly a summary, rather than a contextualization of the results within existing work, or statements on implications of the results.	 NEG
+1358	neuroai19_53_1_8	 One part that would have been nice to clarify is the relative role of random feedback vs eligibility traces in successful network performance.	 NEG
+734	iclr20_720_2_7	 Why reward decomposition at the lower levels is a problem instead of a feature isn't totally clear, but this criticism does not apply to Option-Critic models.	 NEG
+232	graph20_61_2_10	 Obtained results are supported with clear metrics.	 POS
+765	iclr20_855_3_1	 The paper defines r as ratio of network updates to environment interactions to describe model-free and model-based methods, and hypothesizes that model-based methods are more data-efficient because of a higher ratio r. To test this hypothesis, the authors take Rainbow DQN (model-free) and modify it to increase its ratio r to be closer to that SiMPLe (model-based).	 NA
+252	graph20_61_2_30	 LIMITATIONS AND FUTURE WORK The limitations are mainly focused on the specificity of project requirements to one University in Canada, the small sample size of participants to evaluations.	 NA
+1165	midl20_77_4_12	 How were these trajectories formed?	 NA
+930	midl19_49_1_26	 The hyper-parameters of autoencoder and the recon decoder should be more clearly stated for reproducibility.	 NEG
+1364	neuroai19_54_3_3	 I agree these are good goals, and I think some progress is made, but that progress seems somewhat limited in scope.	 POS
+328	iclr19_242_2_2	 I think it is an interesting idea, but the current draft does not provide sufficient support.	 NEG
+454	iclr19_659_2_1	 Its main idea is updating multiple Q-functions, instead of one, with independently sampled experience replay memory, then take the action selected by the ensemble.	 NA
+705	iclr20_526_3_26	 I would like to see this curve extended until we start to see signs of overfitting.	 NEG
+1215	neuroai19_2_2_5	 The theoretical results stated are nice to have.	 POS
+788	iclr20_880_2_8	 Without non-linear functions, equations (1) and (2) describe a classical matrix factorization like Principal Component Analysis.	 NA
+336	iclr19_242_2_12	 For example, a simple thing to do is t0 separately train networks with standard setting and then ensemble trained networks.	 NA
+12	graph20_25_2_12	 For example, an equally feasible alternative is a design that uses a small physical numerical keyboard that users can carry with them and enter passwords even from their pockets (the haptic feedback that such a keyboard would enable would allow such interaction).	 NA
+370	iclr19_261_3_6	 Im not sure how impressed I should be by these results.	 NEG
+1311	neuroai19_34_2_13	" Typo page 4 line 158: ""pray"" >> ""prey"""""	 NA
+504	iclr19_938_3_9	 Authors do not visualize the attention (as is common in previous work involving attention in e.g., NLP).	 NEG
+1399	neuroai19_59_3_24	 Looking into the nuances of the explored phenomena may provide new information for the field.	 NA
+67	graph20_29_3_35	" Similarly, their 2D tasks showed only small differences in error rate, up to 2% at most."""	 NA
+1379	neuroai19_59_3_4	 A short discussion of other training algorithms (such as surrogate gradient or surrogate loss methods) and why the given one was chosen instead would have been helpful.	 NEG
+83	graph20_35_1_9	 Finally, the discussion would benefit from some more general discussion, before the limitations, on the overall findings and what they mean for mind mapping and similar applications moving forward.	 NEG
+721	iclr20_57_3_5	 Strenghts: + the paper proposes a reasonable way to try to improve accuracy by identifying hard-negative examples + the paper is well written, but it would benefit from another round of proofreading for grammar and clarity Weaknesses: - performance of the proposed method highly depends on labels of hard-negative examples.	 NEG
+679	iclr20_526_3_0	 This paper presents a black-box style learning algorithm for Markov Random Fields (MRF).	 NA
+318	iclr19_1399_1_11	 The proposed method introduces a lot of complexity for very small gains.	 NEG
+325	iclr19_1399_1_18	" Experiments with ImageNet or some other large data set would be advisable to increase significance of this work. """	 NEG
+1244	neuroai19_26_1_0	 The proposed model is essentially a constrained/specific parameterisation within the broader class of 'context dependent' models.	 NA
+27	graph20_26_3_2	 pseudo-url The submitted modifications show a marked improvement in the exposition of the work.	 POS
+199	graph20_56_1_6	 As these two metrics deliver different candidates, the resulting set of trajectories is provided to the user in a set of small multiples illustrating the selected trajectories and sorted by similarity; the user can refine selections, although it was not clear how.	 NEG
+856	midl19_14_2_30	 A similar experiment can be made using other data sets with red/bright lesions (e.g. e-ophtha, pseudo-url) or optic disc annotations (e.g. REFUGE database, pseudo-url).	 NA
+46	graph20_29_3_14	 One example, in the last paragraph before EXPERIMENTS (p. 4), a point is made that goes like this: - a lack of effect might be due to A values that are too close to each other, - even if A should in fact have an effect according to some model (Eq.	 NA
+960	midl19_51_2_0	 The authors combine DL and computer vision methods to digitally stain confocal microscopy images to generate H&E like images.	 NA
+363	iclr19_242_2_41	 Regarding the theoretical part, I still do not follow the authors' explanation.	 NEG
+468	iclr19_866_1_1	 The first of two modules is responsible for learning a goal embedding of a given instruction using a learned distance function.	 NA
+51	graph20_29_3_19	 It seems that this sort of design issues can be solved using threshold values under which users simply cannot accurately acquire a target.	 NEG
+530	iclr20_1042_2_8	 But equation (2) shows a loss with no weighting.	 NA
+207	graph20_56_1_14	 But this is not clear.	 NEG
+907	midl19_49_1_2	 This work has a remarkable clinical value.	 POS
+34	graph20_29_3_2	 However I found the theoretical argument to use the DGDM in screen-to-screen pointing quite hard to follow, even though it is the main point of this article.	 NEG
+385	iclr19_261_3_27	 The red one!	 NA
+1179	midl20_90_2_0	 In this work, the authors purposed a new deep neural network architecture for detecting injuries/abnormalities in the knee.	 NA
+40	graph20_29_3_8	 Checking can also come up negative, and that is ok.	 NA
+63	graph20_29_3_31	 2-mm targets on a touch device could definitely count as difficult.	 NA
+164	graph20_43_1_11	" Based on the above, I feel the paper is marginally below the acceptance threshold."""	 NA
+1302	neuroai19_34_2_4	 Very well written.	 POS
+1249	neuroai19_26_1_5	 Perhaps compare to reference models [11] or [10] rather than a 'vanilla' RNN, as this amounts to not using any prior information about the task (which, by construction, we 'know' is useful).	 NEG
+561	iclr20_1493_2_19	 In general this list is not comprehensive either: there are many relevant connections to the robustness-accuracy tradeoff (pseudo-url, pseudo-url), and other works.	 NA
+735	iclr20_720_2_8	" For Option-Critic models the authors claim that ""Rather than the additional inductive bias of temporal abstraction, we focus on the investigation of composition as type of hierarchy in the context of single and multitask learning while demonstrating the strength of hierarchical composition to lie in domains with strong variation in the objectives such as in multitask domains."""	 NA
+1162	midl20_77_4_9	 Other specific suggestions: Section 2: region of interest (ROI) performing motions does not make sense to me.	 NEG
+573	iclr20_1493_2_33	 This is in stark contrast to real datasets, where there seem to be many different ways to perfectly separate say, dogs from cats, and the variance of the data seems to be very heavily concentrated in a small subset of directions.	 NEG
+810	iclr20_934_1_7	 The difference is that the proposed method learns a multi-channel representation and uses the attention technique to aggregate the multi-channel representation.	 NA
+228	graph20_61_2_6	 ABSTRACT Abstract provides information that is ideally expected: one sentence of context, summary of contribution, explanation of system and methodology.	 POS
+457	iclr19_659_2_4	 The main ideas and claims are clearly expressed.	 POS
+1391	neuroai19_59_3_16	 I think the interesting part may be in quantifying just how much of a difference there is between short and long timescale neurons -- for instance, does task-relevant information in both neuron groups fall off in a way that can be well predicted by their intrinsic time constants?	 NEG
+1362	neuroai19_54_3_1	" Operationally, I'm not quite sure how these are different, so, to me this goal is roughly ""be explainable"", and progress towards it could be measured e.g. in MDLs."	 NA
+259	iclr19_1049_1_4	 However, the form of knowledge is limited and simple.	 NEG
+1081	midl20_100_1_32	 It is fine that you give your method a name (although I personally dislike it), but a bit weird not to explain it.	 NEG
+862	midl19_14_2_36	 The first 10 lines contains too much wording for a statement that should be much easier to explain.	 NEG
+500	iclr19_938_3_5	 Pro - MAAC is a simple combination of attention and a centralized value function approach.	 POS
+409	iclr19_304_3_23	 And how do you use that later?	 NEG
+806	iclr20_934_1_2	 The experimental result demonstrates some improvement over existing methods.	 NA
+922	midl19_49_1_18	 However, authors use Jaccard coef.	 NA
+354	iclr19_242_2_32	 The main baseline that has been compared is the standard small-batch training.	 NA
+762	iclr20_76_2_3	 The paper is well written, tghe major issue of this paper is the lack of comparison with other previous methods.	 NEG
+1296	neuroai19_32_1_22	 Is this an issue of spatial scale?	 NA
+506	iclr19_938_3_11	" Reproducibility - It seems straightforward to implement this method, but I encourage open-sourcing the authors' implementation."""	 NA
+351	iclr19_242_2_29	 after rebuttal ==================== I appreciate the authors' response, but I do not think the rebuttal addressed my concerns.	 NEG
+416	iclr19_304_3_30	 What you actually do here is you present 3 different general criteria that could potentially detect overfitting on label-randomized training sets.	 NA
+760	iclr20_76_2_1	 In this scheme, a Teacher generates data according to a Gaussian random field, and a Student learns them via kernel regression.	 NA
+118	graph20_39_2_0	 The paper explores the possibilities of reviewing and visualising patient-generated data from a range of stakeholders consisting mainly of healthcare providers and patients.	 NA
+581	iclr20_1493_2_42	 Overall, this paper is a very promising step in studying adversarial robustness, but concerns about discussion of prior work, discussion of experimental setup, and conclusions drawn, currently bar me from recommending acceptance.	 POS
+1171	midl20_85_3_3	 However, I have following concerns: 1.	 NA
+431	iclr19_495_1_3	 However, I find the paper written in a way assuming readers very familiar with related concept and algorithms in reinforcement learning.	 NEG
+945	midl19_51_1_13	 This paper still represent a niche application of a more general DL technique that has been already used for a large number of similar applications.	 NEG
+447	iclr19_601_3_1	 It is meant to generate overall images as image slice sequences with memory and computation economy by using a Multidimensional Upscaling method.	 NA
+1103	midl20_119_2_4	 Comment: It would nice if the authors could also show some visualisations of the latent space, with comparisons between with and without the constraint.	 NEG
+430	iclr19_495_1_2	 Thus I think this method is itself interesting.	 POS
+194	graph20_56_1_1	" These are notoriously difficult to select directly due to issues of occlusion and the ""hairball"" effect when there are many trajectories intertwines, as is the case with eye tracking, network, or flight trails data."	 NA
+1190	midl20_96_3_1	 This is done with manual labelling and a ResNet-18.	 NA
+740	iclr20_720_2_13	 It certainly does not seem justified to me to just assume this framework and disregard past successful approaches even as a comparison.	 NEG
+934	midl19_51_1_2	 The authors propose to use a cycle-GAN to shift the distribution of CM images towards more standard H&E images which are easier to interpret.	 NA
+283	iclr19_1091_1_21	 Please provide some extra information on how it is calculated.	 NA
+210	graph20_56_1_17	 However, the video alludes to something not mentioned in the paper about directionality: only the Pearson algorithm identifies direction, and even from the video it was not clear how the user selected it.	 NEG
+602	iclr20_2046_2_7	 However, it does not clearly explain the key insights of why it could perform better.	 NEG
+1301	neuroai19_34_2_3	 Use of the same spatial transformer model with an interchangeable bank of input features is elegant.	 POS
+697	iclr20_526_3_18	 Experiments: The authors show the empirical advantages offered by the proposed method over the existing literature.	 POS
+638	iclr20_2094_1_12	 Note that the 2D Knapsack problem with rotations admits a 3/2 + \epsilon - approximation algorithm (Galvez et. al., FOCS 2017).	 NA
+111	graph20_36_1_25	 But in the other condition, participants could have perform just as well, with a slight rotation or translation.	 NEG
+278	iclr19_1091_1_16	 Minor points: - The choice for these tasks is not motivated well.	 NEG
+999	midl19_52_2_18	 Are the results on Table 1 heavily dependent on use of these masks?	 NEG
+1337	neuroai19_37_3_15	 Its more a series of statements than a cleverly woven argument.	 NEG
+432	iclr19_495_1_4	 Thus although one can get the general idea on how the method works, it might be difficult to get a deeper understanding on some details.	 NEG
+1056	midl20_100_1_7	 The methods section lacks details for reproducing the work.	 NEG
+237	graph20_61_2_15	 APPLICATION BACKGROUND This section conveniently introduces domain-specific terms and thus contributes to make the paper standalone in understanding the context.	 POS
+313	iclr19_1399_1_6	 These were good data sets a few years ago and still are good data sets to test the code and sanity of the idea, but concluding anything strong based on the results obtained with them is not a good idea.	 NEG
+1377	neuroai19_59_3_2	 The work would benefit from more detailed discussion of the training algorithm that provides some indication that the results aren't unduly sensitive to these details.	 NEG
+41	graph20_29_3_9	 These results remain valid, even if the proposed approach is not as context-independent as hoped.	 NEG
+712	iclr20_526_3_33	 Is that the case?	 NA
+1265	neuroai19_3_3_0	 This intriguing study proposes to modify the classical Q-learning paradigm by splitting the reward into two streams with different parameters, one for positive rewards and one for negative rewards.	 NA
+533	iclr20_1042_2_11	 2) Theoretical inconsistencies Although the system might work overall, two things seem to be technically incorrect: - The decoder and classifier are expected to approximate the distribution of training data according to the authors (for valid generative replay).	 NEG
+611	iclr20_2046_2_16	 In particular, the probability in the second term of Theorem 1 is hard to parse.	 NEG
+43	graph20_29_3_11	 I think this part needs to be drastically shortened or even removed, in favor of a more realistic discussion about generalization---and possible lack thereof.	 NEG
+125	graph20_39_2_7	 Its well known that 'chronic conditions might take a different form and thus interpreted within a particular context; this makes the contribution of the paper marginal, as one would expect a clear articulation of how the method is chosen to fit into the context of the wider literature on similar issues and ultimately the nature of the study participants.	 NEG
+1177	midl20_85_3_11	" Last line of section 1: ""it can distinguish distributional versus data uncertainties""."	 NA
+868	midl19_14_2_44	 International Conference on Medical Image Computing and Computer-Assisted Intervention.	 NA
+205	graph20_56_1_12	 The authors state directionality is a critical advantage of their brushing technique, but never actually stipulate how direction is specified in the original share definition.	 NEG
+985	midl19_52_2_4	 I believe the experiments are thorough and well designed to back the claims of the paper.	 POS
+1382	neuroai19_59_3_7	 I feel that more tools should have been used to further support or push the results.	 NEG
+569	iclr20_1493_2_28	 The paper justifies the adversarial vulnerability of the Linear SVM by arguing that the Bayes-optimal classifier is not in the Linear SVM hypothesis class, which makes sense.	 POS
+1374	neuroai19_54_3_13	" I believe this paper is addressing questions that many of the workshop attendees will find interesting."""	 POS
+484	iclr19_866_1_17	 How different are the familiar and unfamiliar instructions?	 NEG
+446	iclr19_601_3_0	 Authors propose a decoder arquitecture model named Subscale Pixel Network.	 NA
+700	iclr20_526_3_21	 Its absence seems like a serious omission.	 NEG
+995	midl19_52_2_14	 5- How is the complex component of the signal concatenated into a channel ?	 NEG
+621	iclr20_2046_2_26	 Other comments: It is assumed that the noise of value and policy network is zero at the leaf node.	 NA
+1247	neuroai19_26_1_3	 The model description is nice and clear.	 POS
+718	iclr20_57_3_2	 The authors consider using 3 different objective functions: L1, the original cross entropy loss; L2, capturing the shared features in positive and hard-negative examples as regularizer of L1 by introducing a new label z; L3, a three-class classification objective using softmax.	 NA
+747	iclr20_727_1_2	" To further increase the expressive power of the normalizing flow, they propose using a VAE to learn the underlying input to the ""Flow Module""."	 NA
+699	iclr20_526_3_20	 MNIST, in particular, is a well studied dataset that many readers will be able to easily interpret.	 NA
+1049	midl20_100_1_0	 Overall, the quality of the paper is fair.	 POS
+540	iclr20_1042_2_18	 But regardless of this, both models are inconsistent.)	 NEG
+462	iclr19_659_2_9	 Since the method requires updating multiple Q-functions, it may cost much more time for each RL time step, so Im not sure whether the ensemble method can outperform the non-ensemble one within the same time period.	 NEG
+1182	midl20_90_2_3	 The paper is written very well, the implementation details are provided to help reproducing the results.	 POS
+728	iclr20_720_2_1	 I am quite confused about what exactly the author are claiming is the core contribution of their work.	 NEG
+1025	midl19_56_3_14	" Smooth shape interpolation by traversal of the latent space was also demonstrated, and some of their latents also corresponded to reasonable variations in anatomical shape, without being ""restricted"" to statistical modes of variation as discussed here."	 NA
+825	midl19_13_2_10	" It would be interesting to have the author's point of you on the less than optimal results, and how they plan to improve it."""	 NA
+9	graph20_25_2_9	 However, there are two main weaknesses: 1) the submission narrowly focuses on bend passwords, and 2) the evaluation compares BendyPass against only one baseline.	 NEG
+941	midl19_51_1_9	 I think this joint training might result in even better outcomes.	 NA
+324	iclr19_1399_1_17	 In summary, it is not a bad paper, but the experimental results are not sufficient to conclude that much.	 NEG
+648	iclr20_2094_1_22	 For example, in Eq (1) what are the dimensions K and V?	 NEG
+1195	midl20_96_3_6	 No effort has been made to fuse the proposed pipeline into a medical-image analysis specific methodological contribution.	 NEG
+610	iclr20_2046_2_15	 It does not give the explicit relations of the sample complexity with respect to different quantities in the algorithms.	 NEG
+179	graph20_53_2_6	" How likely are designers of 3D objects to include such ""internal faces""; is this common?"	 NA
+848	midl19_14_2_22	 To the best of my knowledge, it has the highest performance in the DRIVE data set compared to several other techniques.	 NA
+1251	neuroai19_26_1_7	 Paper is clear and quite readable.	 POS
+263	iclr19_1091_1_1	 Specifically, it proposes to use a state representation consisting of 2 (or 3) parts that are trained separately on different aspects of the relevant state: reward prediction, image reconstruction and (inverse) model learning.	 NA
+1259	neuroai19_29_1_2	 I dont see how the current work adds more clarity to this research direction.	 NEG
+1138	midl20_70_4_0	 This paper presents a multi-label classification framework based on deep convolutional neural networks (CNNs) for diagnosing the presence of 14 common thoracic diseases and observations in X-rays images.	 NA
+970	midl19_51_2_10	 3- Please provide an evidence to support the positive effect of choosing an augmentation of size 512x512 after 50 epochs in Section 3.2.	 NEG
+1336	neuroai19_37_3_14	" Sure neuromorphic systems are coming, but not definitely not with moderate expenditure of resources and effort""  While it covers important ground, I think the arguments need more refinement and focus before they can inspire productive discussion."	 NEG
+1269	neuroai19_3_3_4	 The figures are hard to parse because of the very short captions.	 NEG
+518	iclr19_997_3_11	 Please provide more details about this point.	 NA
+123	graph20_39_2_5	 Although sections 2 attempts to situate the research question into the context of varied perspectives, a better justification of the stake for the field would have been made clearer had it being the section doesn't read as if its an analysis of prior data, and not of related works.	 POS
+1260	neuroai19_29_1_3	 The main point relies purely on a visual representation of the top PCs of the penultimate layer of a CNN, which I believe is insufficient.	 NEG
+350	iclr19_242_2_28	 Related works: Smith et al. 2018 Don't Decay the Learning Rate, Increase the Batch Size.	 NA
+1106	midl20_127_4_1	 The authors show that the AF-Net is more robust compared to the U-Net and M-Net for AFV measurement.	 NA
+294	iclr19_1291_3_7	" I have some concerns regarding their method and the experiments which are brought up in the following: Method: In a non-fully-cooperative environment, sharing hidden state entirely as the only option for communicate is not very reasonable; I think something like sending a message is a better option and more realistic (e.g., something like the work of Mordatch & Abbeel, 2017) Experiment: The experiment ""StarCraft explore"" is similar to predator-prey; therefore, instead of explaining StarCraft explore, I would like to see how the model works in StarCraft combat."	 NEG
+478	iclr19_866_1_11	 While there are advantages to training the modules separately, there is a risk that they are reasoning over different portions of the goal space.	 NEG
+1090	midl20_108_3_6	 The experiments are clearly explained and the results are well presented.	 POS
+651	iclr20_2094_1_25	 Also in the algorithm, what are l_i, w_i and h_i?	 NEG
+716	iclr20_57_3_0	 This paper is aimed at tackling a general issue in NLP: Hard-negative training data (negative but very similar to positive) can easily confuse standard NLP model.	 NA
+1131	midl20_56_4_12	 The authors do not compare the inference speed of the proposed method with others.	 NEG
+1294	neuroai19_32_1_20	 One of their stated novel contribution was that their filters were convolutional but they do not discuss the potential connection convolutional filters have to transformation of features which seemed like a gap.	 NEG
+1357	neuroai19_53_1_7	 While eligibility traces have received some attention in neuroscience their relevance to learning has not been thoroughly explored, so this paper makes a welcome contribution that fits well within the workshop goals.	 POS
+912	midl19_49_1_7	 I'm concerned that this would make the readers misunderstand the data are shape-models (point cloud dataset) before the description of dataset in Sec. 2.	 NEG
+467	iclr19_866_1_0	 The paper proposes a modular approach to the problem of mapping instructions to robot actions.	 NA
+489	iclr19_866_1_22	 The paper initially states that this distance function is computed from learned embeddings of human demonstrations, however these are presumably instructions rather than demonstrations.	 NEG
+677	iclr20_305_3_13	 Additional feedback with the aim to improve the paper.	 NA
+687	iclr20_526_3_8	 While I agree with the statement as such, the GAN development makes a stronger statement about the nature of the learning trajectory.	 NEG
+857	midl19_14_2_31	 I think this is a key experiment, really necessary to validate if the method is performing well or not.	 NEG
+637	iclr20_2094_1_11	 c) According to the problem formulation and the experiments, it seems that the authors are studying a restricted subclass of 2D/3D bin packing problems: there is only one bin, so (it seems that) the authors are dealing with geometric knapsack problems (with rotations).	 NA
+134	graph20_39_2_16	 From the guidelines outlined in section 9, it is hard to pinpoint new learning that the paper provides to the visualisation of subsequent design practices apart from restating well-known design insights.	 NEG
+1093	midl20_108_3_9	 Good and convincing results when compared to competing methods * Strong validation * It is a shame that the Kaplan-Meier estimator was not repeated for all baselines to further illustrate the strength of the multi-task features * There are many more TUPAC16 results [pseudo-url.	 NEG
+1005	midl19_52_2_24	 However, no quantitative comparisons are provided.	 NEG
+185	graph20_53_2_12	" Finally we saw a high rating for the perception of realism and feelings of immersion in the environment (Q10) ( = 5.88, = 0.78)."""	 NA
+643	iclr20_2094_1_17	 Nothing is said about actions and transitions and rewards (we have to read the AC framework in order to get a clue of these components).	 NEG
+1111	midl20_127_4_6	 Note: the abstract is not included in the PDF.	 NEG
+1317	neuroai19_36_1_5	 Overall the technical aspects of this paper seem sound.	 POS
+619	iclr20_2046_2_24	 It is not clear whether such assumptions hold for practical problems.	 NEG
+297	iclr19_1291_3_10	 There are some questions in the experiment section that have not been addressed very well.	 NEG
+275	iclr19_1091_1_13	" The second point is the motivation of the split approach: it seems in direct contradiction with the ""disentangled"" and ""compact"" demands the authors pose."	 NEG
+498	iclr19_938_3_3	 MAAC outperforms baselines on TC, but not on RT.	 NA
+992	midl19_52_2_11	 Even though the authors explain the details in the text I believe an additional illustration in each block (maybe in Appendix) might be helpful to reproduce the method in the paper for further research.	 NEG
+887	midl19_40_3_5	 The best combination (both labels + CRF) are close or on par with full supervision.	 NA
+975	midl19_51_2_15	 In addition, images representing eliminated nuclei using noisy RCM images should be presented with their counterpart using despeckling network.	 NEG
+598	iclr20_2046_2_3	 Pros: This paper presents the first study of tree search for optimal actions in the presence of pretrained value and policy networks.	 POS
+474	iclr19_866_1_7	 WEAKNESSES - The algorithmic contribution is relatively minor, while the technical merits of the approach are questionable.	 NEG
+1250	neuroai19_26_1_6	 Also perhaps report results from one of the 2 (mentioned) more complex benchmarks.	 NEG
+1386	neuroai19_59_3_11	 However, I feel that the work lacked clarity when it came to interpretation of the results.	 NEG
+866	midl19_14_2_42	 Imaging 34.9 (2015): 1797-1807.	 NA
+1166	midl20_77_4_13	 How big were the ROIs?	 NA
+650	iclr20_2094_1_24	 In the algorithm what is n_{gae}?	 NEG
+874	midl19_25_3_4	" No public implementation of the method is provided, which would be a nice extra"""	 NEG
+1145	midl20_71_1_2	 It's compared to an earlier method which uses a 3D network and time-point concatenation and reports improvement in Dice scores, false positive rates and true positive rate.	 NA
+943	midl19_51_1_11	 One issue, from a purely organizational standpoint, is the fact that information about previous work is either omitted or scattered around the text.	 NEG
+597	iclr20_2046_2_2	 Experimental results validate the theoretical analysis and demonstrate the effectiveness of A*MCTS over benchmark MCTS algorithms with value and policy networks.	 POS
+280	iclr19_1091_1_18	 It seems the robot arm task is very similar to the navigation task, due to robot arm's end effector being position controlled directly.	 NEG
+1122	midl20_56_4_0	 The authors propose a framework to utilize one model under different acquisition context scenarios.	 NA
+1371	neuroai19_54_3_10	 Explanations are mostly complete, though some details are missing.	 POS
+680	iclr20_526_3_1	 The approach doubles down on the variational approach with variational approximations for both the positive phase and negative phase of the log likelihood objective function.	 NA
+108	graph20_36_1_22	 Last, I would like to talk about the results.	 NA
+1114	midl20_135_3_0	 This paper proposes a pulmonary nodule malignancy classification based on the temporal evolution of 3D CT scans analyzed by 3D CNNs.	 NA
+736	iclr20_720_2_9	 First of all, I should point out that [1] looked at applying Option-Critic in a many task setting and found both that there was an advantage to hierarchy and an advantage to added depth of hierarchy.	 NA
+367	iclr19_261_3_2	 They collect a novel dataset in this grounded and goal-driven communication paradigm, define a success metric for the collaborative drawing task, and present models for maximizing that metric.	 NA
+1117	midl20_135_3_3	 Specify that it is on the validation set if so, and clarify these points: number of epochs was set to 150, early stopping to 10 epochs Why is this clipping used?	 NA
+564	iclr20_1493_2_23	" In particular, (b) indicates that it may be *necessary* to design regularization methods that steer NNs towards the correct decision boundaryit says nothing about whether these regularization methods will be *sufficient*, which the paper seems to suggest, e.g. in the abstract ""our results suggest that adversarial vulnerability is not an unavoidable consequence of machine learning in high dimensions, and may often be a result of suboptimal training methods used in current practice."""	 NEG
+172	graph20_45_2_7	 The benefits of the visualization are only demonstrated through qualitative results.	 NEG
+511	iclr19_997_3_4	 The proposed method is evaluated on object classification and object alignment tasks.	 NA
+451	iclr19_601_3_5	 Figure 5 is referenced in the main text after figure 6.	 NEG
+450	iclr19_601_3_4	 Some minor issues: Figure 2 is not referenced anywhere in the main text.	 NEG
+755	iclr20_727_1_10	 I believe that since the model proposed by the authors allows easy back-propagation, their model ought to be easy and fast to train as well.	 NA
+122	graph20_39_2_4	 It read like some form of a haphazard account of few studies that point to the relevance of tracking and visualising patient data in order to inform better health decisions, and ultimately a better lifestyle.	 NEG
+1226	neuroai19_2_2_16	 For instance, how is the b at line 63 related to the activation x_i and ReLU at lines 75 and 76?	 NA
+3	graph20_25_2_3	 The experiment compared BendyPass with standard PIN security feature on touchscreen devices.	 NA
+824	midl19_13_2_9	 Quantitative assessment is fairly limited, and yielding underwhelming results compared to individual networks (ex. CycleGAN).	 NEG
+1153	midl20_77_4_0	 This paper evaluates 5 different models for motion tracking in 4D OCT.	 NA
+800	iclr20_880_2_20	 The product of a series of randomly initialized matrices can lead to a matrix that is initialized with a different distribution where, eventually, components are not i.i.d.. To show that this is not relevant, the authors should organize an experiment where the original matrix (in the small network) is initialized with the dot product of the composing matrices.	 NEG
+396	iclr19_304_3_9	 Detailed remarks: General: A proper definition or at least a somewhat better notion of overfitting would have benefitted the paper.	 NEG
+1071	midl20_100_1_22	 Your statement about AUCs and training sizes is either obviously correct or obviously wrong, depending on interpretation.	 NA
+536	iclr20_1042_2_14	 This is not a sound mechanism to achieve an as-faithful-as-possible (limited by the expressiveness of the encoder-decoder architectures) approximation to the training data.	 NEG
+892	midl19_40_3_10	 Could it be extended to work with only a fraction of the nuclei annotated ?	 NEG
+921	midl19_49_1_17	 In the last paragraph of the introduction, authors say 'it is hard to define a feasible metric describing the similarity of the valve shape in general.'.	 NA
+531	iclr20_1042_2_9	 I'm assuming the text is correct, but then a beta should be added to the equation in front of the KL divergence.	 NA
+1279	neuroai19_32_1_5	 If it had been evaluated and its efficacy varied in an interesting way with respect to the parameters of the model this could be a potentially important model to understand why the nervous system trades off between object identity associated features, transformation features, and speed.	 NA
+308	iclr19_1399_1_1	 Strengths: - The experiments are very thorough.	 POS
+830	midl19_14_2_4	 Thus, it is not necessary to have all the classes annotated in all the images but to have the labels at least in some of them.	 NA
+1319	neuroai19_36_1_7	 However at present, adversarial attacks likely have much larger relevance to AI than neuro.	 NEG
+96	graph20_36_1_10	 There is no clue about scalability neither.	 NEG
+97	graph20_36_1_11	 To which extent the system supports other patterns?	 NEG
+1053	midl20_100_1_4	 The methodological novelty seems insignificant.	 NEG
+1120	midl20_135_3_6	 Can you comment?	 NA
+471	iclr19_866_1_4	 The paper evaluates the method in various simulated domains and compares against RL and IL baselines.	 NA
+101	graph20_36_1_15	 Looking at table 1 makes me think these instructions are quite clear on how to make these 3 patterns.	 NA
+330	iclr19_242_2_5	 In this case, I would expect the authors provide more intuitive explanations.	 NEG
+767	iclr20_855_3_3	 This paper raises an important point about empirical claims without properly tuned baselines, when comparing model-based to model-free methods, identifying the amount of computation as a hyperparameter to tune for fairer comparisons.	 NA
+1033	midl19_59_3_1	 Only compared to IMM which is very similar to the proposed T-IMM.	 NEG
+99	graph20_36_1_13	 This inevitably has an effect on syrup pouring.	 NA
+1094	midl20_108_3_10	 pseudo-url] yet the presented method is benchmarked only against 3.	 NEG
+305	iclr19_1333_1_3	 A quite severe issue with this report is that the authors don't report relevant learning results from before (+-) 2009, and empirical comparisons are only given w.r.t. other recent heuristics.	 NEG
+594	iclr20_1724_2_11	" As this direction (of increased resolution to make the problem less artificial) is likely to be important, a brief discussion of this finding from the main paper text would be appropriate - p3 resiliance -> resilience - p4 objects is moved -> object is moved - p6 actions itself -> actions themselves; builds upon -> build upon - p7 looses all -> loses all; suited our -> suited to our; render's camera parameters -> render camera parameters; to solve it -> to solve the problem - p8 (Xiong, b;a) and (Xiong, b) -> these references are missing the year; models needs to -> models need to - p9 phenomenon -> phenomena; the the videos -> the videos; these observation -> these observations; of next -> of the next; in real world -> in the real world """	 NA
+933	midl19_51_1_1	 The clinical value of CM images has been highlighted in previous work, but although effective towards the goal of detecting the presence of cancer, these images are hard to interpret by humans.	 NA
+224	graph20_61_2_2	 Clarity The presentation is very clear, with pertinent textual and visual explanations.	 POS
+216	graph20_56_1_23	 In fact, this reads as if the feedback from the experts was so bad that they did not want to describe it.	 NA
+1339	neuroai19_37_3_17	" For example ... ""A neuron simply sits and listens."	 NA
+838	midl19_14_2_12	" It would be interesting to know that aspect, as it is crucial to allow the network to learn to ""transfer"" its own ability for detecting a new region from one data set to another."	 NA
+1235	neuroai19_23_1_4	 It would have been useful to put these in context of the results of the algonauts contest, which pitched supervised methods such as Alexnet against user-submitted content.	 NA
+1231	neuroai19_23_1_0	 I believe the concept of using predictive coding and unlabeled video data to train convnets is a great idea.	 POS
+773	iclr20_855_3_9	 In any case, the results in Figure 1 and the appendix are useful for showing that the baselines used in prior works were not as strong as they could be.	 POS
+609	iclr20_2046_2_14	 The complexity bound in Theorem 1 is hard to understand.	 NEG
+377	iclr19_261_3_14	 Depending on those variance numbers you might also consider doing a statistical test to argue that the auxiliary loss function and and RL fine-tuning offer certain improvement over the Scene2seq base model.	 NEG
+1288	neuroai19_32_1_14	 It was not clear though where they experimentally varied/tested this prior in their algorithm.	 NEG
+752	iclr20_727_1_7	 Also, using the VAE for a predictive task is a little unusual.	 NEG
+517	iclr19_997_3_10	 This paper argues that the choice of the number of parameters is sub-optimal and ineffective in terms of computational complexity.	 NA
+669	iclr20_305_3_1	 Summary The authors apply MARL to principal-agent / mechanism design problems where selfish agents need to be incentivized to coordinate towards a leader's (collective) goal.	 NA
+1224	neuroai19_2_2_14	 The submission is pretty clear.	 POS
+372	iclr19_261_3_8	 You might be able to convince me more if you had a stronger baseline e.g. a bag-of-words Drawer model which works off of the average of the word embeddings in a scripted Teller input.	 NEG
+285	iclr19_1091_1_23	 How would rotating the measurement frame of the ground-truth influence the results?	 NEG
+488	iclr19_866_1_21	 The paper provides insufficient details regarding the RL and IL baselines, making it impossible to judge their merits.	 NEG

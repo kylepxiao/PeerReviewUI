@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var data = {{data|safe}};
+    var reviews = {{reviews|safe}};
+    $(document).ready(function(){
+      $("#update").click(function(){
+        // Clear all reviews
+        for (i=0; i<reviews.length; i++) {
+          $('#review_' + i).empty()
+        }
+        // Fill in sentence by sentence
+        for (i=0; i<data.sentences.length; i++) {
+          review_id = data.review_id[i]
+          var prefix = "";
+          var suffix = "";
+          if (data.arg_pred[i] > 0.5) {
+            if ($('#chk_arg').is(":checked")) {
+              prefix = "<strong>".concat(prefix)
+              suffix = suffix.concat("</strong>")
+            }
+            // Highlight accept and reject
+            if ($('#chk_accept').is(":checked")) {
+              if (data.valence_pred[i] < 0.67) {
+                prefix = "<span style='color: green'>".concat(prefix)
+                suffix = suffix.concat("</span>")
+              }
+            }
+            if ($('#chk_reject').is(":checked")) {
+              if (data.valence_pred[i] > 0.33) {
+                prefix = "<span style='color: red'>".concat(prefix)
+                suffix = suffix.concat("</span>")
+              }
+            }
+          }
+          $('#review_' + review_id).append(prefix + data.sentences[i] + ' ' + suffix)
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+
+<h2>Reviews</h2>
+  <p>Tool Options:</p>
+  <div>
+    <input type="checkbox" id="chk_arg">
+    <label for="vehicle1"> Display Argumentative Discourse Units </label><br>
+    <input type="checkbox" id="chk_accept">
+    <label for="vehicle2"> Display Sentences For Acceptance </label><br>
+    <input type="checkbox" id="chk_reject">
+    <label for="vehicle3"> Display Sentences Against Acceptance </label><br><br>
+    <input id='update', type="submit" value="Update">
+  </div>
+
+  <br>
+
+  <table border = 1>
+    {% for value in reviews %}
+
+    <tr>
+       <!--<th> {{ value }} </th>-->
+       <td id='{{ value.id }}'> {{ value.review }} </td>
+    </tr>
+
+    {% endfor %}
+ </table>
+
+</body>
+</html>
