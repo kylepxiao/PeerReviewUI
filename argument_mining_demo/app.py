@@ -2,14 +2,22 @@ import openreview
 import urllib.parse as urlparse
 import pandas as pd
 import os
+import sys
 from nltk.tokenize import sent_tokenize
 from flask import Flask, render_template, request
 from urllib.parse import parse_qs
-from executables.s_predict import *
+from argument_mining.executables.s_predict import *
+sys.path.insert(1, 'pair_extraction')
+from pair_extraction.dataExtraction import extract_to_file
+from pair_extraction.dataProcessing import sep_data
+from pair_extraction.run_model import pair_inference
+
+import nltk
+nltk.download('punkt')
 
 # Define model
-arg_model_dir = "model_arg_classification/"
-valence_model_dir = "model_valence_classification/"
+arg_model_dir = os.path.join("argument_mining", "model_arg_classification")
+valence_model_dir = os.path.join("argument_mining", "model_valence_classification")
 #preload_model(model_dir)
 
 # Start app and api client
@@ -50,14 +58,16 @@ def predict():
                 )
             tokenized_reviews.append(sentences)
 
+        # prepare data for argument pair extraction
+        extract_to_file(tokenized_reviews, os.path.join('pair_extraction', 'data'))
+        sep_data()
+        pair_inference("pair_extraction/data/predict.txt")
+
+        # inference for argument classification
         df_sentences = pd.DataFrame(reviews_by_sentence)
         df_arg_predicted = predict_stance_from_df(arg_model_dir, df_sentences).copy()
         df_valence_predicted = predict_stance_from_df(valence_model_dir, df_sentences).copy()
 
-        #df_predicted = pd.read_csv('data/reviews_with_predictions.tsv', sep='\t')
-
-        #predict_stance(model_dir, 'data/all_reviews_by_sentences.csv', 'data/reviews_with_predictions.tsv')
-        #df_predicted = pd.DataFrame(columns=['sentence', 'review_id', 'sentence_id', 'confidence'])
         data = {
             'sentences': df_arg_predicted['sentence'].tolist(),
             'review_id': df_arg_predicted['review_id'].tolist(),
@@ -69,4 +79,4 @@ def predict():
         review_ids = [x for x in range(len(all_reviews))]
         return render_template('display.html', reviews=reviews, data=data)
 
-    return 'Hello World!'
+    return 'Bad Request'
