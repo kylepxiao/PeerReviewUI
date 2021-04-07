@@ -3,8 +3,47 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var data = {{data|safe}};
+    var class_data = {{class_data|safe}};
     var reviews = {{reviews|safe}};
+    var pair_mapping = {{pair_mapping|safe}};
+    function toTuple() {
+      s = '(';
+      for (var i = 0; i < arguments.length-1; i++) {
+        s += String(arguments[i]) + ', ';
+      }
+      s += String(arguments[arguments.length-1]) + ')';
+      return s
+    }
+    function tupleToList(t) {
+      l = [];
+      components = t.substring(1, t.length-1).split(', ');
+      for (var i=0; i<components.length; i++) {
+        l.push(eval(components[i]));
+      }
+      return l;
+    }
+    function pair_click_event(){
+      // get data for clicked sentence
+      clicked_review_id = $(this).attr('review_id');
+      clicked_sentence_id = $(this).attr('sentence_id');
+      clicked_discourse_data = pair_mapping[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
+      clicked_discourse_data = tupleToList(clicked_discourse_data);
+      for (i=0; i<class_data.sentences.length; i++) {
+        // get data for each sentence
+        review_id = class_data.review_id[i];
+        sentence_id = class_data.sentence_id[i];
+        current_discourse_data = pair_mapping[toTuple(clicked_review_id, review_id, sentence_id)];
+        current_discourse_data = tupleToList(current_discourse_data);
+        if ((clicked_discourse_data != null) &&
+            (current_discourse_data != null) &&
+            (clicked_discourse_data[1] != -1) &&
+            (clicked_discourse_data[1] == current_discourse_data[1])) {
+          $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'yellow');
+        } else {
+          $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'transparent');
+        }
+      }
+    }
     $(document).ready(function(){
       $("#update").click(function(){
         // Clear all reviews
@@ -12,34 +51,70 @@
           $('#review_' + i).empty()
         }
         // Fill in sentence by sentence
-        for (i=0; i<data.sentences.length; i++) {
-          review_id = data.review_id[i]
-          var prefix = "";
-          var suffix = "";
-          if (data.arg_pred[i] > 0.5) {
+        running_unit = false;
+        for (i=0; i<class_data.sentences.length; i++) {
+          review_id = class_data.review_id[i];
+          sentence_id = class_data.sentence_id[i];
+          var prefix = '<span class="discourse_sentence" review_id=' + review_id + ' sentence_id=' + sentence_id + '>';
+          var suffix = ' </span>';
+          // Handle argumentative statements
+          if (class_data.arg_pred[i] > 0.5) {
             if ($('#chk_arg').is(":checked")) {
-              prefix = "<strong>".concat(prefix)
+              prefix = "<strong>".concat(prefix);
               suffix = suffix.concat("</strong>")
             }
             // Highlight accept and reject
             if ($('#chk_accept').is(":checked")) {
-              if (data.valence_pred[i] < 0.67) {
-                prefix = "<span style='color: green'>".concat(prefix)
-                suffix = suffix.concat("</span>")
+              if (class_data.valence_pred[i] < 0.67) {
+                prefix = "<span style='color: green'>".concat(prefix);
+                suffix = suffix.concat("</span>");
               }
             }
             if ($('#chk_reject').is(":checked")) {
-              if (data.valence_pred[i] > 0.33) {
-                prefix = "<span style='color: red'>".concat(prefix)
-                suffix = suffix.concat("</span>")
+              if (class_data.valence_pred[i] > 0.33) {
+                prefix = "<span style='color: red'>".concat(prefix);
+                suffix = suffix.concat("</span>");
               }
             }
           }
-          $('#review_' + review_id).append(prefix + data.sentences[i] + ' ' + suffix)
+          // Handle pair extraction segmentation
+          if ($('#chk_unit').is(":checked")) {
+            discourse_data = pair_mapping[toTuple(review_id, review_id, sentence_id)];
+            if (discourse_data != null){
+              discourse_data = tupleToList(discourse_data);
+              if ((running_unit == true) && (discourse_data[0] == 'E')) {
+                running_unit = false
+                suffix = suffix.concat("<strong style='color: blue; font-size: 25px'>]</strong>")
+              }
+              if ((discourse_data[0] != 'O') && (discourse_data[0] != 'S')) {
+                prefix = "<u>".concat(prefix)
+                suffix = suffix.concat("</u>")
+                if (discourse_data[0] == 'B') {
+                  running_unit = true;
+                  prefix = "<strong style='color: blue; font-size: 25px'>[</strong>".concat(prefix)
+                }
+              }
+            }
+          }
+          $('#review_' + review_id).append(prefix + class_data.sentences[i] + suffix)
         }
+        $(".discourse_sentence").click(pair_click_event);
       });
+      // Fill in initial review sentences
+      for (i=0; i<class_data.sentences.length; i++) {
+        review_id = class_data.review_id[i];
+        sentence_id = class_data.sentence_id[i];
+        $('#review_' + review_id).append('<span class="discourse_sentence" review_id=' + review_id + ' sentence_id=' + sentence_id + '>' + class_data.sentences[i] + ' </span>')
+      }
+      // Argument pair interaction
+      $(".discourse_sentence").click(pair_click_event);
     });
   </script>
+  <style>
+    .discourse_sentence:hover{
+      color: blue
+    }
+  </style>
 </head>
 <body>
 
@@ -51,7 +126,9 @@
     <input type="checkbox" id="chk_accept">
     <label for="vehicle2"> Display Sentences For Acceptance </label><br>
     <input type="checkbox" id="chk_reject">
-    <label for="vehicle3"> Display Sentences Against Acceptance </label><br><br>
+    <label for="vehicle3"> Display Sentences Against Acceptance </label><br>
+    <input type="checkbox" id="chk_unit">
+    <label for="vehicle4"> Display Units with Pairs </label><br><br>
     <input id='update', type="submit" value="Update">
   </div>
 
@@ -62,7 +139,7 @@
 
     <tr>
        <!--<th> {{ value }} </th>-->
-       <td id='{{ value.id }}'> {{ value.review }} </td>
+       <td id='{{ value.id }}'>  </td>
     </tr>
 
     {% endfor %}

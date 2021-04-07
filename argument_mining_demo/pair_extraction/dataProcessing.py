@@ -307,9 +307,9 @@ def sep_data():
 		# print('ratio for train dev test: {}: {}: {}'.format(len(train_data), len(dev_data), len(test_data)))
 
 
-		full_data.sort()  # make sure that the filenames have a fixed order before shuffling
+		#full_data.sort()  # make sure that the filenames have a fixed order before shuffling
 		random.seed(230)
-		random.shuffle(full_data)  # shuffles the ordering of filenames (deterministic given the chosen seed)
+		#random.shuffle(full_data)  # shuffles the ordering of filenames (deterministic given the chosen seed)
 
 		split_1 = int(0.8 * len(full_data))
 		split_2 = int(0.9 * len(full_data))
