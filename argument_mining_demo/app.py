@@ -59,10 +59,11 @@ def predict():
             tokenized_reviews.append(sentences)
 
         # prepare data for argument pair extraction
+        review_lengths = [len(r) for r in tokenized_reviews]
         extract_to_file(tokenized_reviews, os.path.join('pair_extraction', 'data'))
         sep_data()
         pair_inference("pair_extraction/data/predict.txt")
-        pair_mapping = extract_mappings_from_results("pair_extraction/results/english_model_glove.predict.results", len(all_reviews))
+        label_mapping, pair_mapping = extract_mappings_from_results("pair_extraction/results/english_model_glove.predict.results", len(all_reviews), review_lengths)
 
         # inference for argument classification
         df_sentences = pd.DataFrame(reviews_by_sentence)
@@ -78,6 +79,6 @@ def predict():
         }
         reviews = [{'id': 'review_' + str(i), 'review': review} for i,review in enumerate(all_reviews)]
         review_ids = [x for x in range(len(all_reviews))]
-        return render_template('display.html', reviews=reviews, class_data=class_data, pair_mapping=pair_mapping)
+        return render_template('display.html', reviews=reviews, class_data=class_data, label_mapping=label_mapping, pair_mapping=pair_mapping)
 
     return 'Bad Request'

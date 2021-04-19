@@ -7,6 +7,7 @@ import torch.nn.functional as F
 from config import log_sum_exp_pytorch, START, STOP, PAD
 from typing import Tuple
 from overrides import overrides
+from scipy.special import softmax
 
 class LinearCRF(nn.Module):
 
@@ -232,9 +233,10 @@ class LinearCRF(nn.Module):
         # print("bestScores, decodeIdx:  ", bestScores,decodeIdx)
         return bestScores, decodeIdx
 
-    def pair_decode(self, pair_scores: torch.Tensor, max_review_id: torch.Tensor, decodeIdx: torch.Tensor, wordSeqLengths: torch.Tensor, review_idx: torch.Tensor, reply_idx: torch.Tensor)  -> torch.Tensor :
+    def pair_decode(self, pair_scores: torch.Tensor, max_review_id: torch.Tensor, decodeIdx: torch.Tensor, wordSeqLengths: torch.Tensor, review_idx: torch.Tensor, reply_idx: torch.Tensor, thresh=0.8)  -> torch.Tensor :
 
-
-        pairIdx = torch.argmax(pair_scores, dim=3).unsqueeze(3)
+        probs = nn.Softmax(dim=3)(pair_scores)[:, :, :, 1:]
+        pairIdx = torch.where(probs > thresh, 1, 0)
+        #pairIdx = torch.argmax(pair_scores, dim=3).unsqueeze(3)
 
         return pairIdx

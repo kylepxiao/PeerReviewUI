@@ -1,34 +1,6 @@
 import os
+import ast
 import pandas as pd
-
-"""def extract_to_file(tokenized_reviews, output_path):
-    df_ape = []
-    review_pair_id = 0
-    for i, review in enumerate(tokenized_reviews):
-        # Get dummy labels for all sentences in a review
-        for sentence in review:
-            row = {}
-            row['sentence'] = sentence.replace('\n', '[line_break_token]')
-            row['label1'] = 'O'
-            row['label2'] = 'O'
-            row['type'] = 'Review'
-            row['id'] = review_pair_id
-            df_ape.append(row)
-        # Get all combinations of reviews with other reviews
-        for j in range(i+1, len(tokenized_reviews), 1):
-            other_review = tokenized_reviews[j]
-            for sentence in other_review:
-                row = {}
-                row['sentence'] = sentence.replace('\n', '[line_break_token]')
-                row['label1'] = 'O'
-                row['label2'] = 'O'
-                row['type'] = 'Reply'
-                row['id'] = review_pair_id
-                df_ape.append(row)
-        review_pair_id += 1
-    # save to file
-    df_ape = pd.DataFrame(df_ape, columns=['sentence', 'label1', 'label2', 'type', 'id'])
-    df_ape.to_csv(os.path.join(output_path, 'ReviewRebuttalPredict.txt'), sep='\t', header=False, index=False)"""
 
 def extract_to_file(tokenized_reviews, output_path):
     review_pair_id = 0
@@ -47,7 +19,7 @@ def extract_to_file(tokenized_reviews, output_path):
                 row += str(review_pair_id)
                 row += '\n'
                 output_file.write(row)
-            output_file.write('\n')
+            #output_file.write('\n')
             # Get all combinations of reviews with other reviews
             for j in range(len(tokenized_reviews)):
                 if j == i:
@@ -65,25 +37,31 @@ def extract_to_file(tokenized_reviews, output_path):
                     if k != len(other_review)-1 or j != len(tokenized_reviews)-2 or i != len(tokenized_reviews)-1:
                         row += '\n'
                     output_file.write(row)
-                if j != len(tokenized_reviews)-2 or i != len(tokenized_reviews)-1:
-                    output_file.write('\n')
+            if i != len(tokenized_reviews)-1:
+                output_file.write('\n')
             review_pair_id += 1
 
-# map (source_review_id, target_review_id, target_sentence id) -> (B/I/O, discourse_unit_id)
-def extract_mappings_from_results(result_path, n_reviews):
-    mapping = {}
+# map (source_review_id, target_review_id, target_sentence id) -> B/I/O
+# map (source_review_id, target_review_id, target_sentence id) -> [pair_labels]
+def extract_mappings_from_results(result_path, n_reviews, review_lengths):
+    label_mapping = {}
+    pair_mapping = {}
     with open(result_path, 'r') as f:
         all_reviews = f.read().split('\n\n')
     current_entry_idx = 0
     for i in range(n_reviews):
         for j in ([i] + [x for x in range(n_reviews) if x != i]):
             for k, entry in enumerate(all_reviews[current_entry_idx].split('\n')):
+                if entry == '':
+                    continue
                 entry_data = entry.split('\t')
                 preimage = (i, j, k)
-                if entry_data[3] != 'O':
-                    image = tuple(entry_data[3].split('-'))
-                else:
-                    image = (entry_data[3], -1)
-                mapping[str(preimage)] = str(image)
-            current_entry_idx += 1
-    return mapping
+                label_mapping[str(preimage)] = entry_data[3].split('-')[0]
+                raw_pairs = ast.literal_eval(entry_data[5])
+                raw_head = raw_pairs[:review_lengths[i]]
+                raw_pairs = raw_pairs[review_lengths[i]:]
+                bound_idx = sum([x for x in review_lengths[:i]])
+                raw_pairs[bound_idx:bound_idx] = raw_head
+                pair_mapping[str(preimage)] = raw_pairs
+        current_entry_idx += 1
+    return label_mapping, pair_mapping

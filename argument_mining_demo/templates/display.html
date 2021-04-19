@@ -5,6 +5,7 @@
   <script type="text/javascript">
     var class_data = {{class_data|safe}};
     var reviews = {{reviews|safe}};
+    var label_mapping = {{label_mapping|safe}};
     var pair_mapping = {{pair_mapping|safe}};
     function toTuple() {
       s = '(';
@@ -22,13 +23,31 @@
       }
       return l;
     }
+    function listToArray(t) {
+      l = [];
+      components = t.substring(1, t.length-1).split(', ');
+      for (var i=0; i<components.length; i++) {
+        l.push(eval(components[i]));
+      }
+      return l;
+    }
     function pair_click_event(){
       // get data for clicked sentence
       clicked_review_id = $(this).attr('review_id');
       clicked_sentence_id = $(this).attr('sentence_id');
       clicked_discourse_data = pair_mapping[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
-      clicked_discourse_data = tupleToList(clicked_discourse_data);
+      //clicked_discourse_data = listToArray(clicked_discourse_data);
       for (i=0; i<class_data.sentences.length; i++) {
+        review_id = class_data.review_id[i];
+        sentence_id = class_data.sentence_id[i];
+        if ((clicked_discourse_data != null) &&
+            clicked_discourse_data[i] == 1) {
+          $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'yellow');
+        } else {
+          $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'transparent');
+        }
+      }
+      /*for (i=0; i<class_data.sentences.length; i++) {
         // get data for each sentence
         review_id = class_data.review_id[i];
         sentence_id = class_data.sentence_id[i];
@@ -42,7 +61,7 @@
         } else {
           $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'transparent');
         }
-      }
+      }*/
     }
     $(document).ready(function(){
       $("#update").click(function(){
@@ -79,17 +98,16 @@
           }
           // Handle pair extraction segmentation
           if ($('#chk_unit').is(":checked")) {
-            discourse_data = pair_mapping[toTuple(review_id, review_id, sentence_id)];
-            if (discourse_data != null){
-              discourse_data = tupleToList(discourse_data);
-              if ((running_unit == true) && (discourse_data[0] == 'E')) {
+            label = label_mapping[toTuple(review_id, review_id, sentence_id)];
+            if (label != null){
+              if ((running_unit == true) && (label == 'E')) {
                 running_unit = false
                 suffix = suffix.concat("<strong style='color: blue; font-size: 25px'>]</strong>")
               }
-              if ((discourse_data[0] != 'O') && (discourse_data[0] != 'S')) {
+              if ((label != 'O') && (label != 'S')) {
                 prefix = "<u>".concat(prefix)
                 suffix = suffix.concat("</u>")
-                if (discourse_data[0] == 'B') {
+                if (label == 'B') {
                   running_unit = true;
                   prefix = "<strong style='color: blue; font-size: 25px'>[</strong>".concat(prefix)
                 }
@@ -128,7 +146,7 @@
     <input type="checkbox" id="chk_reject">
     <label for="vehicle3"> Display Sentences Against Acceptance </label><br>
     <input type="checkbox" id="chk_unit">
-    <label for="vehicle4"> Display Units with Pairs </label><br><br>
+    <label for="vehicle4"> Display Criticizing Units with Pairs (thresh_prob=0.8)</label><br><br>
     <input id='update', type="submit" value="Update">
   </div>
 
