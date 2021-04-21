@@ -8,7 +8,8 @@ from flask import Flask, render_template, request
 from urllib.parse import parse_qs
 from argument_mining.executables.s_predict import *
 sys.path.insert(1, 'pair_extraction')
-from pair_extraction.dataExtraction import extract_to_file, extract_mappings_from_results
+#from pair_extraction.dataExtraction import extract_to_file, extract_mappings_from_results, extract_mappings_from_sentence_embeddings
+from pair_extraction.dataExtraction import *
 from pair_extraction.dataProcessing import sep_data
 from pair_extraction.run_model import pair_inference
 
@@ -60,10 +61,24 @@ def predict():
 
         # prepare data for argument pair extraction
         review_lengths = [len(r) for r in tokenized_reviews]
-        extract_to_file(tokenized_reviews, os.path.join('pair_extraction', 'data'))
-        sep_data()
-        pair_inference("pair_extraction/data/predict.txt")
-        label_mapping, pair_mapping = extract_mappings_from_results("pair_extraction/results/english_model_glove.predict.results", len(all_reviews), review_lengths)
+        #extract_to_file(tokenized_reviews, os.path.join('pair_extraction', 'data'))
+        #sep_data()
+        #pair_inference("pair_extraction/data/predict.txt")
+        label_mapping, pair_mapping_ape = extract_mappings_from_results("pair_extraction/results/english_model_glove.predict.results", len(all_reviews), review_lengths)
+        if label_mapping is not None:
+            pass
+            #TODO change so that tokenized_reviews is modified accordingly
+
+        # get entailment pair mapping
+        generate_entailment_results(tokenized_reviews)
+        pair_mapping_entail = extract_mappings_from_entail()
+
+        # get ner pair mapping
+        generate_ner_results(tokenized_reviews)
+        pair_mapping_ner = extract_mappings_from_ner()
+
+        # get sentence embedding pair mapping
+        pair_mapping_emb = extract_mappings_from_sentence_embeddings(tokenized_reviews)
 
         # inference for argument classification
         df_sentences = pd.DataFrame(reviews_by_sentence)
@@ -79,6 +94,6 @@ def predict():
         }
         reviews = [{'id': 'review_' + str(i), 'review': review} for i,review in enumerate(all_reviews)]
         review_ids = [x for x in range(len(all_reviews))]
-        return render_template('display.html', reviews=reviews, class_data=class_data, label_mapping=label_mapping, pair_mapping=pair_mapping)
+        return render_template('display.html', reviews=reviews, class_data=class_data, label_mapping=label_mapping, pair_mapping_ape=pair_mapping_ape, pair_mapping_entail=pair_mapping_entail, pair_mapping_emb=pair_mapping_emb, pair_mapping_ner=pair_mapping_ner)
 
     return 'Bad Request'

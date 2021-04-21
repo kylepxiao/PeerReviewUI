@@ -6,7 +6,10 @@
     var class_data = {{class_data|safe}};
     var reviews = {{reviews|safe}};
     var label_mapping = {{label_mapping|safe}};
-    var pair_mapping = {{pair_mapping|safe}};
+    var pair_mapping_ape = {{pair_mapping_ape|safe}};
+    var pair_mapping_entail = {{pair_mapping_entail|safe}};
+    var pair_mapping_emb = {{pair_mapping_emb|safe}};
+    var pair_mapping_ner = {{pair_mapping_ner|safe}};
     function toTuple() {
       s = '(';
       for (var i = 0; i < arguments.length-1; i++) {
@@ -35,8 +38,17 @@
       // get data for clicked sentence
       clicked_review_id = $(this).attr('review_id');
       clicked_sentence_id = $(this).attr('sentence_id');
-      clicked_discourse_data = pair_mapping[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
-      //clicked_discourse_data = listToArray(clicked_discourse_data);
+      selected_pairing = $('input[name="pair"]:checked').val();
+      if (selected_pairing == 0) {
+        clicked_discourse_data = pair_mapping_ape[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
+      } else if (selected_pairing == 1) {
+        clicked_discourse_data = pair_mapping_entail[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
+      } else if (selected_pairing == 2) {
+        clicked_discourse_data = pair_mapping_emb[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
+      } else if (selected_pairing == 3) {
+        clicked_discourse_data = pair_mapping_ner[toTuple(clicked_review_id, clicked_review_id, clicked_sentence_id)];
+      }
+      //highlight paired args
       for (i=0; i<class_data.sentences.length; i++) {
         review_id = class_data.review_id[i];
         sentence_id = class_data.sentence_id[i];
@@ -46,22 +58,9 @@
         } else {
           $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'transparent');
         }
+        $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('text-decoration', 'none');
       }
-      /*for (i=0; i<class_data.sentences.length; i++) {
-        // get data for each sentence
-        review_id = class_data.review_id[i];
-        sentence_id = class_data.sentence_id[i];
-        current_discourse_data = pair_mapping[toTuple(clicked_review_id, review_id, sentence_id)];
-        current_discourse_data = tupleToList(current_discourse_data);
-        if ((clicked_discourse_data != null) &&
-            (current_discourse_data != null) &&
-            (clicked_discourse_data[1] != -1) &&
-            (clicked_discourse_data[1] == current_discourse_data[1])) {
-          $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'yellow');
-        } else {
-          $(".discourse_sentence[review_id=" + review_id + "][sentence_id=" + sentence_id + "]").css('background-color', 'transparent');
-        }
-      }*/
+      $(".discourse_sentence[review_id=" + clicked_review_id + "][sentence_id=" + clicked_sentence_id + "]").css('text-decoration', 'underline');
     }
     $(document).ready(function(){
       $("#update").click(function(){
@@ -140,16 +139,33 @@
   <p>Tool Options:</p>
   <div>
     <input type="checkbox" id="chk_arg">
-    <label for="vehicle1"> Display Argumentative Discourse Units </label><br>
+    <label> Display Argumentative Discourse Units </label><br>
     <input type="checkbox" id="chk_accept">
-    <label for="vehicle2"> Display Sentences For Acceptance </label><br>
+    <label> Display Sentences For Acceptance </label><br>
     <input type="checkbox" id="chk_reject">
-    <label for="vehicle3"> Display Sentences Against Acceptance </label><br>
+    <label> Display Sentences Against Acceptance </label><br>
     <input type="checkbox" id="chk_unit">
-    <label for="vehicle4"> Display Criticizing Units with Pairs (thresh_prob=0.8)</label><br><br>
-    <input id='update', type="submit" value="Update">
+    <label> Display Criticizing Units with Pairs (APE)</label><br><br>
   </div>
-
+  <p>Segmentation Options:</p>
+  <div>
+    <input type="radio" id="chk_ape" value=0 name="seg" checked>
+    <label> Use sentence segmentation</label><br>
+    <input type="radio" id="chk_entail" value=1 name="seg">
+    <label> Use APE segmentation </label><br><br/>
+  </div>
+  <p>Pairing Options:</p>
+  <div>
+    <input type="radio" id="chk_ape" value=0 name="pair" checked>
+    <label> Use APE pair extraction (thresh_prob=0.8)</label><br>
+    <input type="radio" id="chk_entail" value=1 name="pair">
+    <label> Use textual entailment </label><br>
+    <input type="radio" id="chk_embed" value=2 name="pair">
+    <label> Use sentence embeddings </label><br>
+    <input type="radio" id="chk_ner" value=3 name="pair">
+    <label> Use NER </label><br>
+  </div><br>
+  <input id='update', type="submit" value="Update"><br>
   <br>
 
   <table border = 1>
